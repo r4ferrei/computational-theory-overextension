@@ -1,0 +1,61 @@
+This directory contains all source code used for analyses in the paper
+"A Computational Theory of Child Overextension",
+as well as intermediate data files that are sufficient for data
+analyses. For a complete reproduction from raw files, some datasets that come
+from independent studies need to be obtained separately; see below.
+
+The code is organized as follows:
+
+    src/:          shared library files
+    analyses/:     data analysis code
+    scripts/:      source files used mostly for preprocessing raw data
+    data/:         data files used in analyses
+    intermediate/: data files in intermediate/cached format used in analyses
+    results/:      cached results directory
+    plots/:        saved plots directory
+
+The Makefile contains rules for all steps. Helpful rules are 'analyses'
+and 'plots', which use intermediate data files to reproduce all analyses
+in the paper. Thus, a complete replication can be run as follows:
+
+    export PYTHONPATH=src
+    make analyses
+    make plots
+
+Note that due to cross-validated analyses in the production experiment,
+the full process can take several hours. Alternatively, you can look in
+the Makefile and run individual analyses one by one.
+
+Python dependencies should be present in most scientific distributions, and
+include:
+
+    numpy
+    pandas
+    matplotlib
+    seaborn
+    scipy
+    statsmodels
+    torch (with CUDA support)
+    nltk (with WordNet package)
+
+    PIL (for full preprocessing only)
+    skimage (for full preprocessing only)
+    PyLangAcq (for full preprocessing only)
+
+For a full reproduction from raw data, additional datasets to be placed
+under data/ are:
+
+    CHILDES transcripts from https://childes.talkbank.org,
+    see intermediate/childes_transcripts_used.csv for a list of files.
+
+    ImageNet database from http://image-net.org,
+    see intermediate/image-paths/* for the lists of files needed.
+
+    Wordbank vocabulary from http://wordbank.stanford.edu
+
+    Data association from the Small World of Words project, see
+    https://smallworldofwords.org/en,
+    namely the "random walks" embeddings matrix.
+
+Author: Renato Ferreira Pinto Junior
+Date: 2019-09-01

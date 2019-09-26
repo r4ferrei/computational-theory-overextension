@@ -1,0 +1,14 @@
+This directory contains a demonstration of the computational framework
+presented in our paper "A Computational Theory of Child Overextension".
+
+The following files are included:
+
+    - overextension_demo.ipynb: Jupyter Notebook with the demo, which can
+    also be modified and re-evaluated for further experiments.
+
+    - overextension_demo.pdf: PDF print-out of the demo for ease of access.
+
+    - *.{npy,csv}: data files required for this self-contained demo.
+
+Author: Renato Ferreira Pinto Junior
+Date: 2019-08-31

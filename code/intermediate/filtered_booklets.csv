@@ -1,0 +1,15 @@
+booklet,early_high,early_low,late_low
+A,hog.n.03,train.n.01,bus.n.01
+A,cow.n.01,trouser.n.01,short_pants.n.01
+A,orange.n.01,bicycle.n.01,motorcycle.n.01
+A,dog.n.01,car.n.01,truck.n.01
+A,apple.n.01,shirt.n.01,vest.n.01
+A,cat.n.01,dress.n.01,sweater.n.01
+A,egg.n.02,airplane.n.01,rocket.n.01
+B,shirt.n.01,hog.n.03,hippopotamus.n.01
+B,bicycle.n.01,cow.n.01,elk.n.01
+B,boat.n.01,carrot.n.01,celery.n.02
+B,trouser.n.01,orange.n.01,beet.n.02
+B,dress.n.01,dog.n.01,fox.n.01
+B,car.n.01,apple.n.01,strawberry.n.01
+B,train.n.01,cat.n.01,raccoon.n.02

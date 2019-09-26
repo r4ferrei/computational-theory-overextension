@@ -1,0 +1,28 @@
+The file overextension_pairs.csv contains the word-referent examples of
+overextension used in our analyses in the paper
+"A Computational Theory of Child Overextension".
+
+Each row contains one word-referent pair, with following columns:
+    - 'production_word':     overextended noun
+    - 'production_wordnet':  WordNet synset of overextended noun
+    - 'production_imagenet': WordNet synset of overextended noun, as required
+            to retrieve item from ImageNet database
+    - 'sense_word':          referent concept noun
+    - 'sense_wordnet':       WordNet synset of referent concept noun
+    - 'sense_imagenet':      WordNet synset of referent concept noun, as
+            required to retrieve item from ImageNet database
+    - 'source_id':           key identifying the source study for this example
+
+The complete references for the source studies are as follows:
+
+Barrett, M. D. (1978). Lexical development and overextension in child language. Journal of Child Language, 5(2), 205-219.
+Clark, E. V. (1973). What's in a word? On the child's acquisition of semantics in his first language. In Cognitive development and acquisition of language.
+Fremgen, A., & Fay, D. (1980). Overextensions in production and comprehension: A methodological clarification. Journal of Child Language, 7(1), 205-211.
+Gruendel, J. M. (1977). Referential extension in early language development. Child Development, 1567-1576.
+Rescorla, L. A. (1976). Concept formation in word learning (Doctoral dissertation).
+Rescorla, L. A. (1980). Overextension in early language development. Journal of Child Language, 7(2), 321-335.
+Rescorla, L. A. (1981). Category development in early language. Journal of Child Language, 8(2), 225-238.
+Thomson, J. R., & Chapman, R. S. (1977). Who is ‘Daddy’revisited: the status of two-year-olds' over-extended words in use and comprehension. Journal of Child Language, 4(3), 359-375.
+
+Author: Renato Ferreira Pinto Junior
+Date: 2019-09-01

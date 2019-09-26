@@ -1,0 +1,73 @@
+
+h = 0.677
+airplane.n.01:
+	airplane.n.01
+bicycle.n.01:
+	bicycle.n.01
+car.n.01:
+	car.n.01
+	boat.n.01
+	helicopter.n.01
+	bus.n.01
+truck.n.01:
+	truck.n.01
+
+h = 0.647
+airplane.n.01:
+	airplane.n.01
+bicycle.n.01:
+	bicycle.n.01
+boat.n.01:
+	boat.n.01
+car.n.01:
+	car.n.01
+	helicopter.n.01
+	bus.n.01
+truck.n.01:
+	truck.n.01
+
+h = 0.525
+airplane.n.01:
+	airplane.n.01
+bicycle.n.01:
+	bicycle.n.01
+boat.n.01:
+	boat.n.01
+bus.n.01:
+	bus.n.01
+car.n.01:
+	car.n.01
+	helicopter.n.01
+truck.n.01:
+	truck.n.01
+
+h = 0.495
+airplane.n.01:
+	airplane.n.01
+	helicopter.n.01
+bicycle.n.01:
+	bicycle.n.01
+boat.n.01:
+	boat.n.01
+bus.n.01:
+	bus.n.01
+car.n.01:
+	car.n.01
+truck.n.01:
+	truck.n.01
+
+h = 0.434
+airplane.n.01:
+	airplane.n.01
+bicycle.n.01:
+	bicycle.n.01
+boat.n.01:
+	boat.n.01
+bus.n.01:
+	bus.n.01
+car.n.01:
+	car.n.01
+helicopter.n.01:
+	helicopter.n.01
+truck.n.01:
+	truck.n.01

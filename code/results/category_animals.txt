@@ -1,0 +1,70 @@
+
+h = 0.677
+animal.n.01:
+	wolf.n.01
+	giraffe.n.01
+dog.n.01:
+	dog.n.01
+duck.n.01:
+	duck.n.01
+	goose.n.01
+	swan.n.01
+kitty.n.04:
+	cat.n.01
+
+h = 0.617
+animal.n.01:
+	giraffe.n.01
+dog.n.01:
+	dog.n.01
+	wolf.n.01
+duck.n.01:
+	duck.n.01
+	goose.n.01
+	swan.n.01
+kitty.n.04:
+	cat.n.01
+
+h = 0.465
+dog.n.01:
+	dog.n.01
+duck.n.01:
+	duck.n.01
+	goose.n.01
+	swan.n.01
+giraffe.n.01:
+	giraffe.n.01
+kitty.n.04:
+	cat.n.01
+wolf.n.01:
+	wolf.n.01
+
+h = 0.404
+cat.n.01:
+	cat.n.01
+dog.n.01:
+	dog.n.01
+duck.n.01:
+	duck.n.01
+	goose.n.01
+	swan.n.01
+giraffe.n.01:
+	giraffe.n.01
+wolf.n.01:
+	wolf.n.01
+
+h = 0.343
+cat.n.01:
+	cat.n.01
+dog.n.01:
+	dog.n.01
+duck.n.01:
+	duck.n.01
+giraffe.n.01:
+	giraffe.n.01
+goose.n.01:
+	goose.n.01
+swan.n.01:
+	swan.n.01
+wolf.n.01:
+	wolf.n.01

@@ -1,0 +1,106 @@
+
+h = 0.677
+apple.n.01:
+	apple.n.01
+	orange.n.01
+	peach.n.03
+	melon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+juice.n.01:
+	lemon.n.01
+
+h = 0.647
+apple.n.01:
+	apple.n.01
+	orange.n.01
+	peach.n.03
+	melon.n.01
+	lemon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+
+h = 0.617
+apple.n.01:
+	apple.n.01
+	peach.n.03
+	melon.n.01
+	lemon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+orange.n.01:
+	orange.n.01
+
+h = 0.525
+apple.n.01:
+	apple.n.01
+	melon.n.01
+	lemon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+orange.n.01:
+	orange.n.01
+peach.n.03:
+	peach.n.03
+
+h = 0.465
+apple.n.01:
+	apple.n.01
+	melon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+orange.n.01:
+	orange.n.01
+	lemon.n.01
+peach.n.03:
+	peach.n.03
+
+h = 0.434
+apple.n.01:
+	apple.n.01
+	melon.n.01
+	pear.n.01
+banana.n.02:
+	banana.n.02
+lemon.n.01:
+	lemon.n.01
+orange.n.01:
+	orange.n.01
+peach.n.03:
+	peach.n.03
+
+h = 0.343
+apple.n.01:
+	apple.n.01
+	melon.n.01
+banana.n.02:
+	banana.n.02
+lemon.n.01:
+	lemon.n.01
+orange.n.01:
+	orange.n.01
+peach.n.03:
+	peach.n.03
+pear.n.01:
+	pear.n.01
+
+h = 0.313
+apple.n.01:
+	apple.n.01
+banana.n.02:
+	banana.n.02
+lemon.n.01:
+	lemon.n.01
+melon.n.01:
+	melon.n.01
+orange.n.01:
+	orange.n.01
+peach.n.03:
+	peach.n.03
+pear.n.01:
+	pear.n.01

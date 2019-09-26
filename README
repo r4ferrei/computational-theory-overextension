@@ -1,0 +1,23 @@
+This project contains replication code, demo notebook, and meta dataset
+that accompany the paper:
+
+Ferreira Pinto, R., Jr., & Xu, Y. (2019). A Computational Theory of Child
+Overextension. Manuscript submitted for publication.
+
+The directories are organized as follows:
+
+    code/: all code and intermediate data files necessary for replication of
+    the analyses in the paper
+
+    dataset/: meta dataset of overextension noun-referent pairs
+
+    demo/: Jupyter Notebook demonstrating the proposed computational framework
+
+Each directory contains a README file further documenting how to use each
+resource.
+
+Feel free to direct any questions to Renato Ferreira Pinto Junior
+(renato@cs.toronto.edu).
+
+Author: Renato Ferreira Pinto Junior
+Date: 2019-09-01
