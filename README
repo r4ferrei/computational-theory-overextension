@@ -12,6 +12,7 @@ The directories are organized as follows:
     dataset/: meta dataset of overextension noun-referent pairs
 
     demo/: Jupyter Notebook demonstrating the proposed computational framework
+    demo.zip: zip file containing the demo only.
 
 Each directory contains a README file further documenting how to use each
 resource.
