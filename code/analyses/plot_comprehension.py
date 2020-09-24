@@ -1,3 +1,4 @@
+import argparse
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -6,7 +7,24 @@ import statsmodels.stats.weightstats as stats
 
 import plotting_style
 
-RESULTS         = 'results/comprehension.csv'
+parser = argparse.ArgumentParser()
+parser.add_argument('--freq_prior', action='store_true', dest='freq_prior')
+parser.add_argument('--filtered', action='store_true', dest='filtered')
+args = parser.parse_args()
+
+FREQ_PRIOR = args.freq_prior
+FILTERED   = args.filtered
+
+if FREQ_PRIOR:
+    assert(not FILTERED)
+    RESULTS = 'results/comprehension_freq_prior.csv'
+    OUTPUT  = 'plots/comprehension_freq_prior.pdf'
+elif FILTERED:
+    RESULTS = 'results/comprehension_filtered.csv'
+    OUTPUT  = 'plots/comprehension_filtered.pdf'
+else:
+    RESULTS = 'results/comprehension.csv'
+    OUTPUT  = 'plots/comprehension.pdf'
 
 MCDONOUGH_LABEL = 'Empirical data (McDonough, 2002)'
 MODEL_LABEL     = 'Model prediction'
@@ -159,6 +177,6 @@ sns.despine()
 
 plt.tight_layout()
 
-plt.savefig('plots/comprehension.pdf', dpi=1200)#, bbox_inches='tight')
+plt.savefig(OUTPUT, dpi=1200)#, bbox_inches='tight')
 
 plt.show()

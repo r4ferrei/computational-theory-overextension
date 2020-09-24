@@ -8,6 +8,7 @@ import torch
 def compute_likelihood(prod_sense_dist, kernel_widths):
     p, s, d = prod_sense_dist.shape
     assert(
+            ((d,) == kernel_widths.shape) or
             ((p,) == kernel_widths.shape) or
             ((1,) == kernel_widths.shape))
 
@@ -15,9 +16,16 @@ def compute_likelihood(prod_sense_dist, kernel_widths):
     KERNEL_EXP = 2
 
     curr = prod_sense_dist
-    curr = torch.norm(curr, p=KERNEL_EXP, dim=2)
-    curr = torch.div(curr, torch.reshape(kernel_widths, (-1,1)))
-    curr = torch.exp(-torch.pow(curr, KERNEL_EXP))
+    if kernel_widths.shape == (1,) or kernel_widths.shape == (p,):
+        curr = torch.norm(curr, p=KERNEL_EXP, dim=2)
+        curr = torch.div(curr, torch.reshape(kernel_widths, (-1,1)))
+        curr = torch.exp(-torch.pow(curr, KERNEL_EXP))
+    else:
+        curr = torch.pow(curr, KERNEL_EXP)
+        curr = torch.div(curr, kernel_widths)
+        curr = torch.sum(curr, dim=2)
+        curr = torch.exp(-curr)
+
     return curr
 
 def block_prods(prod_sense_dist, prod_indices):

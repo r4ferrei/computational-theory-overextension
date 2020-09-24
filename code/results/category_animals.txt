@@ -12,7 +12,7 @@ duck.n.01:
 kitty.n.04:
 	cat.n.01
 
-h = 0.617
+h = 0.616
 animal.n.01:
 	giraffe.n.01
 dog.n.01:
@@ -25,7 +25,7 @@ duck.n.01:
 kitty.n.04:
 	cat.n.01
 
-h = 0.465
+h = 0.464
 dog.n.01:
 	dog.n.01
 duck.n.01:
@@ -39,7 +39,7 @@ kitty.n.04:
 wolf.n.01:
 	wolf.n.01
 
-h = 0.404
+h = 0.403
 cat.n.01:
 	cat.n.01
 dog.n.01:

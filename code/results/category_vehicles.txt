@@ -12,7 +12,7 @@ car.n.01:
 truck.n.01:
 	truck.n.01
 
-h = 0.647
+h = 0.646
 airplane.n.01:
 	airplane.n.01
 bicycle.n.01:

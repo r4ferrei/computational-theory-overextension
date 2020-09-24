@@ -11,9 +11,11 @@ import model
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--uniform', action='store_true', dest='uniform')
+parser.add_argument('--filtered', action='store_true', dest='filtered')
 args = parser.parse_args()
 
 UNIFORM = args.uniform
+FILTERED = args.filtered
 
 REL_FREQ        = 'intermediate/prod_vocab_rel_freqs.csv'
 PROD_VOCAB      = 'intermediate/filtered_prod_vocab_mcdonough.csv'
@@ -23,9 +25,15 @@ BOOKLET         = 'intermediate/filtered_booklets.csv'
 BOOKLET_SYNSETS = 'data/mcdonough_synsets.csv'
 
 
-if UNIFORM:
+if UNIFORM and FILTERED:
+    PARAMETERS      = 'intermediate/model_parameters_uniform_filtered.pkl'
+    RESULTS         = 'results/mcdonough_production_uniform_filtered.csv'
+elif UNIFORM:
     PARAMETERS      = 'intermediate/model_parameters_uniform.pkl'
     RESULTS         = 'results/mcdonough_production_uniform.csv'
+elif FILTERED:
+    PARAMETERS      = 'intermediate/model_parameters_filtered.pkl'
+    RESULTS         = 'results/mcdonough_production_filtered.csv'
 else:
     PARAMETERS      = 'intermediate/model_parameters.pkl'
     RESULTS         = 'results/mcdonough_production.csv'

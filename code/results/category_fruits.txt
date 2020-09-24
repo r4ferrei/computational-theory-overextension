@@ -11,7 +11,7 @@ banana.n.02:
 juice.n.01:
 	lemon.n.01
 
-h = 0.647
+h = 0.646
 apple.n.01:
 	apple.n.01
 	orange.n.01
@@ -22,7 +22,7 @@ apple.n.01:
 banana.n.02:
 	banana.n.02
 
-h = 0.617
+h = 0.616
 apple.n.01:
 	apple.n.01
 	peach.n.03
@@ -47,7 +47,7 @@ orange.n.01:
 peach.n.03:
 	peach.n.03
 
-h = 0.465
+h = 0.464
 apple.n.01:
 	apple.n.01
 	melon.n.01
@@ -89,7 +89,7 @@ peach.n.03:
 pear.n.01:
 	pear.n.01
 
-h = 0.313
+h = 0.312
 apple.n.01:
 	apple.n.01
 banana.n.02:

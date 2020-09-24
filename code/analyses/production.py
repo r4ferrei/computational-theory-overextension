@@ -13,6 +13,7 @@ import model
 INIT_H = 1
 
 OVEREXTENSION = 'intermediate/filtered_overextension_pairs.csv'
+FILTERED_OVEREXTENSION = 'intermediate/filtered_overextension_pairs_without_mcdonough.csv'
 PROD_VOCAB    = 'intermediate/filtered_prod_vocab.csv'
 FULL_LEXICON  = 'intermediate/filtered_lexicon.csv'
 REL_FREQ      = 'intermediate/prod_vocab_rel_freqs.csv'
@@ -28,6 +29,8 @@ parser.add_argument('--features', type=str, help="e.g. 0,1 or 2")
 parser.add_argument('--pretrained', type=str, help="weights file")
 parser.add_argument('--uniform', action='store_true', dest='uniform')
 parser.add_argument('--baseline', action='store_true', dest='baseline')
+parser.add_argument('--multiple_widths', action='store_true', dest='multiple_widths')
+parser.add_argument('--filtered', action='store_true', dest='filtered')
 parser.add_argument('--cv', action='store_true')
 args = parser.parse_args()
 
@@ -38,7 +41,15 @@ else:
 
 UNIFORM  = args.uniform
 BASELINE = args.baseline
+MULTIPLE_WIDTHS = args.multiple_widths
+FILTERED = args.filtered
 CV       = args.cv
+
+SUFFIX = ''
+if MULTIPLE_WIDTHS:
+    SUFFIX += '_multiple'
+if FILTERED:
+    SUFFIX += '_filtered'
 
 if BASELINE:
     FEATURES_NAME = 'baseline'
@@ -75,7 +86,11 @@ for i, row in prod_vocab.iterrows():
     rel_freqs[i] = rel_freq_dic[synset]
 
 # Construct overextension set as indices into matrix.
-overextension_df = pd.read_csv(OVEREXTENSION)
+if FILTERED:
+    overextension_df = pd.read_csv(FILTERED_OVEREXTENSION)
+else:
+    overextension_df = pd.read_csv(OVEREXTENSION)
+
 overextension_indices = []
 for i, row in overextension_df.iterrows():
     production = row['production_wordnet'], row['production_imagenet']
@@ -97,8 +112,12 @@ if PRETRAINED:
     h = torch.tensor(PRETRAINED['h'], device='cuda', requires_grad=True,
             dtype=dist_matrix.dtype)
 else:
-    h = torch.tensor([INIT_H], device='cuda', requires_grad=True,
-            dtype=dist_matrix.dtype)
+    if MULTIPLE_WIDTHS:
+        h = torch.tensor([INIT_H] * len(FEATURES), device='cuda',
+                requires_grad=True, dtype=dist_matrix.dtype)
+    else:
+        h = torch.tensor([INIT_H], device='cuda', requires_grad=True,
+                dtype=dist_matrix.dtype)
 
 class OverextensionDataset(torch.utils.data.Dataset):
     def __init__(self, overextension_indices):
@@ -126,7 +145,10 @@ def train(dataset, save=True):
         if BASELINE:
             break
 
-        print("Epoch %d, min loss %.6f, h %.4f" % (epoch+1, min_loss, h))
+        if MULTIPLE_WIDTHS:
+            print("Epoch %d, min loss %.6f" % (epoch+1, min_loss))
+        else:
+            print("Epoch %d, min loss %.6f, h %.4f" % (epoch+1, min_loss, h))
         epoch += 1
 
         total_loss = 0
@@ -167,10 +189,11 @@ def train(dataset, save=True):
     if save:
         train_result = {'h' : h.detach().cpu().numpy()}
 
-        result_train_filename = "{}_{}_{}.pkl".format(
+        result_train_filename = "{}_{}_{}{}.pkl".format(
                 RESULT_TRAIN,
                 'uniform' if UNIFORM else 'frequency',
-                FEATURES_NAME)
+                FEATURES_NAME,
+                SUFFIX)
 
         with open(result_train_filename, 'wb') as f:
             pickle.dump(train_result, f)
@@ -214,10 +237,11 @@ def predict(dataset, overextension_indices=overextension_indices,
             }
 
     if save_result:
-        result_pred_filename = "{}_{}_{}.pkl".format(
+        result_pred_filename = "{}_{}_{}{}.pkl".format(
                 RESULT_PRED,
                 'uniform' if UNIFORM else 'frequency',
-                FEATURES_NAME)
+                FEATURES_NAME,
+                SUFFIX)
         with open(result_pred_filename, 'wb') as f:
             pickle.dump(pred_result, f)
 
@@ -267,10 +291,11 @@ if CV:
             'posts' : posts,
             }
 
-    result_pred_filename = "{}_{}_{}.pkl".format(
+    result_pred_filename = "{}_{}_{}{}.pkl".format(
             CV_RESULT,
             'uniform' if UNIFORM else 'frequency',
-            FEATURES_NAME)
+            FEATURES_NAME,
+            SUFFIX)
     with open(result_pred_filename, 'wb') as f:
         pickle.dump(pred_result, f)
 else:

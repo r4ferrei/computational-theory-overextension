@@ -1,3 +1,4 @@
+import argparse
 import pickle
 
 import torch
@@ -9,12 +10,28 @@ import matplotlib.pyplot as plt
 import model
 import semantic_space
 
-PARAMETERS = 'intermediate/model_parameters.pkl'
+parser = argparse.ArgumentParser()
+parser.add_argument('--freq_prior', action='store_true', dest='freq_prior')
+parser.add_argument('--filtered', action='store_true', dest='filtered')
+args = parser.parse_args()
+
+FREQ_PRIOR = args.freq_prior
+FILTERED   = args.filtered
+
+if FILTERED:
+    PARAMETERS = 'intermediate/model_parameters_filtered.pkl'
+else:
+    PARAMETERS = 'intermediate/model_parameters.pkl'
 REL_FREQ   = 'intermediate/prod_vocab_rel_freqs.csv'
 BOOKLET    = 'intermediate/filtered_booklets.csv'
 SYNSETS    = 'data/mcdonough_synsets.csv'
 
-RESULTS    = 'results/comprehension.csv'
+BASENAME = 'results/comprehension'
+if FREQ_PRIOR:
+    BASENAME += '_freq_prior'
+if FILTERED:
+    BASENAME += '_filtered'
+RESULTS = BASENAME + '.csv'
 
 semantic_space.load_precomputed(
         dists = 'intermediate/dist_matrix_square_mcdonough.npy',
@@ -59,6 +76,10 @@ for _, row in booklet.iterrows():
     dist_matrix = torch.tensor(dist_matrix, device='cuda')
 
     lik  = model.compute_likelihood(dist_matrix, kernel_widths)
+    if FREQ_PRIOR:
+        # Each prior element applies to one column.
+        lik = torch.mul(lik, rel_freqs)
+
     prob = torch.div(lik,
             torch.reshape(torch.sum(lik, dim=1), (-1,1)))
     prob = prob.detach().cpu().numpy()

@@ -1,3 +1,4 @@
+import argparse
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -6,8 +7,20 @@ import statsmodels.stats.weightstats as stats
 
 import plotting_style
 
-RESULT_FREQ    = 'results/mcdonough_production.csv'
-RESULT_UNIFORM = 'results/mcdonough_production_uniform.csv'
+parser = argparse.ArgumentParser()
+parser.add_argument('--filtered', action='store_true', dest='filtered')
+args = parser.parse_args()
+
+FILTERED = args.filtered
+
+if FILTERED:
+    RESULT_FREQ    = 'results/mcdonough_production_filtered.csv'
+    RESULT_UNIFORM = 'results/mcdonough_production_uniform_filtered.csv'
+    OUTPUT         = 'plots/mcdonough_production_filtered.pdf'
+else:
+    RESULT_FREQ    = 'results/mcdonough_production.csv'
+    RESULT_UNIFORM = 'results/mcdonough_production_uniform.csv'
+    OUTPUT         = 'plots/mcdonough_production.pdf'
 
 MCDONOUGH_LABEL = 'McDonough\n(2002)'
 FREQUENCY_LABEL = 'Model\n(frequency prior)'
@@ -121,6 +134,6 @@ sns.despine()
 
 plt.tight_layout()
 
-plt.savefig('plots/mcdonough_production.pdf', dpi=1200)#, bbox_inches='tight')
+plt.savefig(OUTPUT, dpi=1200)#, bbox_inches='tight')
 
 plt.show()
