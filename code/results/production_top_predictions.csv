@@ -21,7 +21,7 @@ apple.n.01,pear.n.01,apple.n.01,orange.n.01,peach.n.03,cheese.n.01,fruit.n.01,Tr
 apple.n.01,plum.n.02,apple.n.01,peach.n.03,orange.n.01,grape.n.01,fruit.n.01,True
 apple.n.01,pumpkin.n.02,apple.n.01,carrot.n.03,orange.n.01,cheese.n.01,potato.n.01,True
 apple.n.01,strawberry.n.01,apple.n.01,fruit.n.01,grape.n.01,orange.n.01,ice_cream.n.01,True
-apple.n.01,teapot.n.01,cup.n.01,bottle.n.01,bowl.n.01,box.n.01,spoon.n.01,False
+apple.n.01,teapot.n.01,cup.n.01,bottle.n.01,box.n.01,bowl.n.01,spoon.n.01,False
 apple.n.01,tomato.n.01,apple.n.01,potato.n.01,juice.n.01,carrot.n.03,cheese.n.01,True
 baby.n.01,child.n.01,baby.n.01,son.n.01,girl.n.01,ma.n.01,dad.n.01,True
 baby.n.01,statue.n.01,movie.n.01,book.n.01,dwelling.n.01,baby.n.01,toy.n.03,True
@@ -102,8 +102,8 @@ cat.n.01,lion.n.01,animal.n.01,tiger.n.02,bear.n.01,cat.n.01,dog.n.01,True
 cat.n.01,hog.n.03,cow.n.01,baby.n.01,animal.n.01,dog.n.01,bear.n.01,False
 cat.n.01,rabbit.n.01,bunny.n.02,kitten.n.01,animal.n.01,kitty.n.04,cat.n.01,True
 cheese.n.01,butter.n.01,cheese.n.01,milk.n.01,food.n.01,egg.n.02,toast.n.01,True
-clock.n.01,bracelet.n.02,necklace.n.01,shoe.n.01,toy.n.03,ball.n.01,bag.n.04,False
-clock.n.01,meter.n.02,toy.n.03,tape.n.04,ball.n.01,car.n.01,watch.n.01,False
+clock.n.01,bracelet.n.02,necklace.n.01,shoe.n.01,toy.n.03,ball.n.01,box.n.01,False
+clock.n.01,meter.n.02,toy.n.03,ball.n.01,tape.n.04,car.n.01,watch.n.01,False
 clock.n.01,radio_receiver.n.01,telephone.n.01,radio.n.01,tape.n.04,ball.n.01,book.n.01,False
 clock.n.01,telephone.n.01,box.n.01,car.n.01,ball.n.01,book.n.01,radio.n.01,False
 clock.n.01,timer.n.01,clock.n.01,watch.n.01,box.n.01,ball.n.01,toy.n.03,True
@@ -153,7 +153,7 @@ duck.n.01,pigeon.n.01,bird.n.01,duck.n.01,animal.n.01,baby.n.01,chicken.n.02,Tru
 duck.n.01,platypus.n.01,animal.n.01,duck.n.01,bunny.n.02,dog.n.01,bear.n.01,True
 duck.n.01,swan.n.01,duck.n.01,bird.n.01,goose.n.01,fish.n.01,animal.n.01,True
 fish.n.01,bee.n.01,bug.n.01,animal.n.01,baby.n.01,bird.n.01,fly.n.01,False
-fish.n.01,butterfly.n.01,bird.n.01,bee.n.01,bug.n.01,animal.n.01,baby.n.01,False
+fish.n.01,butterfly.n.01,bird.n.01,bee.n.01,animal.n.01,bug.n.01,baby.n.01,False
 fish.n.01,crab.n.01,fish.n.01,baby.n.01,animal.n.01,dog.n.01,bug.n.01,True
 fish.n.01,firefly.n.01,bug.n.01,animal.n.01,bee.n.01,baby.n.01,bird.n.01,False
 fish.n.01,mosquito.n.01,bug.n.01,bee.n.01,animal.n.01,bird.n.01,fly.n.01,False
@@ -226,12 +226,12 @@ squirrel.n.01,ice_bear.n.01,bear.n.01,animal.n.01,dog.n.01,penguin.n.01,baby.n.0
 squirrel.n.01,skunk.n.04,animal.n.01,zebra.n.01,dog.n.01,kitty.n.04,cat.n.01,False
 tea.n.01,coffee.n.01,tea.n.01,milk.n.01,chocolate.n.03,juice.n.01,food.n.01,True
 tea.n.01,cup.n.01,glass.n.02,bottle.n.01,bowl.n.01,plate.n.04,spoon.n.01,False
-tea.n.01,teapot.n.01,cup.n.01,bottle.n.01,bowl.n.01,box.n.01,spoon.n.01,False
+tea.n.01,teapot.n.01,cup.n.01,bottle.n.01,box.n.01,bowl.n.01,spoon.n.01,False
 tiger.n.02,lion.n.01,animal.n.01,tiger.n.02,bear.n.01,cat.n.01,dog.n.01,True
 truck.n.01,bulldozer.n.01,car.n.01,truck.n.01,tractor.n.01,toy.n.03,animal.n.01,True
 truck.n.01,bus.n.01,car.n.01,train.n.01,truck.n.01,bag.n.04,ball.n.01,True
 truck.n.01,train.n.01,car.n.01,bus.n.01,truck.n.01,bicycle.n.01,toy.n.03,True
-water.n.06,hose.n.03,shoe.n.01,toy.n.03,ball.n.01,baby.n.01,box.n.01,False
+water.n.06,hose.n.03,shoe.n.01,toy.n.03,ball.n.01,baby.n.01,book.n.01,False
 wheel.n.01,ring.n.08,telephone.n.01,tape.n.04,ball.n.01,box.n.01,shoe.n.01,False
 wheel.n.01,wagon.n.01,bicycle.n.01,car.n.01,wheel.n.01,train.n.01,truck.n.01,True
 wheel.n.01,barrow.n.03,car.n.01,bicycle.n.01,truck.n.01,toy.n.03,box.n.01,False

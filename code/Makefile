@@ -167,6 +167,7 @@ plot_comprehension:
 plot_asymmetry:
 	python3 analyses/plot_asymmetry.py
 	python3 analyses/plot_asymmetry.py --filtered
+	python3 analyses/plot_asymmetry.py --freq_prior
 
 analyses: \
     analysis_production \
